@@ -1,0 +1,50 @@
+{
+  "name": "synclight-plus",
+  "version": "1.1.0",
+  "description": "Плавный Ambilight для ZX Sync LED Strip",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node scripts/test-core.js && node scripts/test-modes.js && node scripts/test-remote.js",
+    "probe": "node scripts/probe.js",
+    "icon": "node scripts/make-icon.js",
+    "dist": "electron-builder --win nsis"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "node-hid": "^3.4.0",
+    "qrcode": "^1.5.4",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "electron": "^45.2.0",
+    "electron-builder": "^26.18.0"
+  },
+  "productName": "SyncLight Plus",
+  "author": "Sergey",
+  "build": {
+    "appId": "local.synclight-plus",
+    "productName": "SyncLight Plus",
+    "npmRebuild": false,
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SyncLight Plus",
+      "runAfterFinish": true
+    }
+  }
+}

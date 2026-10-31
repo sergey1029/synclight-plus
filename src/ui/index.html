@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:" />
+    <title>SyncLight Plus</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand"><span class="logo"></span>SyncLight Plus</div>
+      <nav class="segmented" id="modes"></nav>
+      <div class="status" id="status"></div>
+      <label class="switch big" title="Включить / выключить подсветку">
+        <input type="checkbox" id="enabled" />
+        <span class="track"><span class="thumb"></span></span>
+        <span class="switch-label">Подсветка</span>
+      </label>
+    </header>
+
+    <div class="banner" id="syncLightBanner" hidden>
+      <span>Запущен оригинальный SyncLight — он будет перебивать цвета ленты.</span>
+      <button id="closeSyncLight">Закрыть SyncLight</button>
+    </div>
+    <div class="banner warn" id="layoutBanner" hidden></div>
+    <div class="banner info" id="profileBanner" hidden></div>
+
+    <main>
+      <section class="left">
+        <div class="card preview-card">
+          <canvas id="preview"></canvas>
+          <p class="muted center" id="previewHint"></p>
+        </div>
+        <div class="card" id="quick"></div>
+      </section>
+
+      <section class="right">
+        <nav class="tabs" id="tabs"></nav>
+        <div class="panel" id="panel"></div>
+      </section>
+    </main>
+
+    <script src="../shared/presets.js"></script>
+    <script src="../engine/ambilight.js"></script>
+    <script src="ui.js"></script>
+  </body>
+</html>
