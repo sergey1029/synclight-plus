@@ -10,7 +10,7 @@
     "icon": "node scripts/make-icon.js",
     "dist": "electron-builder --win nsis"
   },
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "node-hid": "^3.4.0",
